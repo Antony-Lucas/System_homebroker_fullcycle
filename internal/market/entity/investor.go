@@ -26,23 +26,23 @@ func (i *Investor) UpdateAssetPosition(assetID string, qtdShares int) {
 	}
 }
 
-func (i *Investor) GetAssetPosition(assetId string) *InvestorAssetPosition {
-	for _, assetposition := range i.AssetPosition {
-		if assetposition.AssetId == assetId {
-			return assetposition
+func (i *Investor) GetAssetPosition(assetID string) *InvestorAssetPosition {
+	for _, assetPosition := range i.AssetPosition {
+		if assetPosition.AssetID == assetID {
+			return assetPosition
 		}
 	}
 	return nil
 }
 
 type InvestorAssetPosition struct {
-	AssetId string
+	AssetID string
 	Shares  int
 }
 
-func NewInvestorAssetPosition(assetId string, shares int) *InvestorAssetPosition {
+func NewInvestorAssetPosition(assetID string, shares int) *InvestorAssetPosition {
 	return &InvestorAssetPosition{
-		AssetId: assetId,
+		AssetID: assetID,
 		Shares:  shares,
 	}
 }
